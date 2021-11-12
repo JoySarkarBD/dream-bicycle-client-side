@@ -12,5 +12,5 @@ This is my first niche-product-website project with simple react js and react bo
   <li>I use mongodb as database.</li>
   <li>I host mongodb data in heroku.</li>
   <li>In this site the is some private route for only admin.</li>
-  <li>Admin has the full access of server control.</li>
+  <li>Admin has the full access of server control from dashboard.</li>
 </ul>
