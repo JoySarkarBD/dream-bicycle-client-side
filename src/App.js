@@ -37,9 +37,9 @@ function App() {
               <Home />
             </Route>
 
-            <PrivateRoute exact path="/explore">
+            <Route exact path="/explore">
               <Explore />
-            </PrivateRoute>
+            </Route>
 
 
             <PrivateRoute exact path="/bookOrder/:id">
