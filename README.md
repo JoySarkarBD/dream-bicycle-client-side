@@ -2,7 +2,7 @@
 
 This is the live site link(https://dream-cycle-store.web.app/).
 
-Admin mail: admin@admin.com
+Admin mail: admin@admin.com </br>
 Admin password: 123456 
 
 This is my first niche-product-website project with simple react js and react bootstrap as css framework. This is a small full-tack project of my first try. I hope, I can creat someting more better in future.
