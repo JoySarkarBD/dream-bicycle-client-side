@@ -58,18 +58,10 @@ const Login = () => {
                                     id="exampleInputPassword1" />
                             </div>
 
-
                             <Link to="/register"> <a href="/"> Don't have an account? Create An Account....!</a></Link>
                             <button type="submit" className="btn btn-primary w-75 mt-3 fw-bold">Login</button>
 
                             <hr className="my-4 w-75" />
-                            <div className="d-grid mb-2">
-                                <button onClick={handleGoogleSign} className="btn btn-google bg-success text-uppercase text-white w-75 fw-bold" type="submit" >
-                                    <i className=" me-2"></i> Sign in with Google
-                                </button>
-                            </div>
-                        </form>
-                        <>
                             {
                                 isLoading && <div className="spinner-border text-danger" role="status">
                                     <span className="sr-only"></span>
@@ -86,7 +78,14 @@ const Login = () => {
                                     {authError}
                                 </div>
                             }
-                        </>
+
+                            <div className="d-grid mb-2">
+                                <button onClick={handleGoogleSign} className="btn btn-google bg-success text-uppercase text-white w-75 fw-bold" type="submit" >
+                                    <i className=" me-2"></i> Sign in with Google
+                                </button>
+                            </div>
+                        </form>
+
                     </div>
                     <div className="col-md-6 col-sm-12">
                         <img src={img} className="w-75" alt="" />

@@ -62,7 +62,7 @@ const BookOrder = () => {
             <Navigation></Navigation>
             <div className="d-flex flex-column justify-content-center mb-5">
                 <div>
-                    <h1 className="text-center mt-5 mb-5">Book Now</h1>
+                    <h1 className="text-center mt-5 mb-5">Book <span className="text-danger">Now</span></h1>
                 </div>
                 <div className="row container mx-auto">
                     <div className="col-md-6 col-sm-12">

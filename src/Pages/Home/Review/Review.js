@@ -10,7 +10,7 @@ const Review = () => {
     }, [])
     return (
         <div>
-            <h1 className="mt-5">Clients Review</h1>
+            <h1 className="mt-5">Clients <span className="text-danger">Review</span></h1>
             <div className="container mb-5">
                 <div className="row row-cols-1 row-cols-md-3 g-4">
                     {reviews.length === 0 ? <div className="spinner-border text-danger mx-auto" role="status">
