@@ -69,7 +69,6 @@ const MyOrders = () => {
                         </table>
                     </div>
                 </>}
-            <Footer></Footer>
         </>
     );
 };
