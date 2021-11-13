@@ -13,7 +13,15 @@ const OrderedItem = ({ orders, serial, deleteOrder }) => {
                     <td>{product}</td>
                     <td>{email}</td>
                     <td>{address}</td>
-                    <td>{status}</td>
+                    {status === "Pending" ?
+                        <td className="text-warning">
+                            {status}
+                        </td>
+                        :
+                        <td className="text-success">
+                            {status}
+                        </td>
+                    }
                     <td>
                         {status === "Pending" ?
                             (<button onClick={() => deleteOrder(_id)} className="btn btn-danger">Cancel</button>)

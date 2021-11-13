@@ -69,23 +69,24 @@ const Login = () => {
                                 </button>
                             </div>
                         </form>
-
-                        {
-                            isLoading && <div className="spinner-border text-danger" role="status">
-                                <span className="sr-only"></span>
-                            </div>
-                        }
-                        {
-                            user?.email && <div className="alert alert-success mt-3 w-75" role="alert">
-                                Login successfully!
-                            </div>
-                        }
-                        {
-                            authError && <div className="alert alert-danger mt-3 w-75" role="alert">
-                                {authError}
-                            </div>
-                        }
-
+                        <>
+                            {
+                                user?.email && <div className="alert alert-success mt-3 w-75" role="alert">
+                                    Login successfully!
+                                </div>
+                            }
+                            {
+                                isLoading && <div className="spinner-border text-danger" role="status">
+                                    <span className="sr-only"></span>
+                                </div>
+                            }
+                            {
+                                authError &&
+                                <div className="alert alert-danger mt-3 w-75" role="alert">
+                                    {authError}
+                                </div>
+                            }
+                        </>
                     </div>
                     <div className="col-md-6 col-sm-12">
                         <img src={img} className="w-75" alt="" />
