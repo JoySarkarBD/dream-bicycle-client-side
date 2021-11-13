@@ -1,5 +1,4 @@
 import React, { useRef } from 'react';
-import DashBoardNav from '../Shared/DashBoardNav/DashBoardNav';
 
 const UserReview = () => {
 
@@ -44,7 +43,6 @@ const UserReview = () => {
 
     return (
         <div>
-            <DashBoardNav></DashBoardNav>
             <div className="d-flex flex-column justify-content-center mb-5">
                 <div>
                     <h1 className="text-center mt-5 mb-5">Give A Review</h1>

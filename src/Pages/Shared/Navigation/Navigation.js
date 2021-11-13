@@ -15,7 +15,7 @@ const Navigation = () => {
                     <Nav className="ms-auto d-flex justify-content-center align-items-center">
                         <Nav.Link as={NavLink} to="/home">Home</Nav.Link>
                         <Nav.Link as={NavLink} to="/explore">Explore</Nav.Link>
-                        {user?.email && <Nav.Link as={NavLink} to="/dashboard">Dashboard</Nav.Link>}
+                        {user?.email && <Nav.Link as={NavLink} to="/dashBoard">Dashboard</Nav.Link>}
                         {user?.email && <Navbar.Text>
                             Signed in as: <a href="/" aria-disabled>{user?.displayName}</a>
                         </Navbar.Text>}

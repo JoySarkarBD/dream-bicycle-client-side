@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import DashBoardNav from '../Shared/DashBoardNav/DashBoardNav';
 import AllProducts from './AllProducts/AllProducts';
 
 const ManageProducts = () => {
@@ -29,7 +28,6 @@ const ManageProducts = () => {
 
     return (
         <div>
-            <DashBoardNav></DashBoardNav>
             <div className="my-8 text-center mt-5 mb-5">
                 <h3 className="text-3xl">
                     Manage All Products

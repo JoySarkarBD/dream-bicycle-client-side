@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import useAuth from '../../Hooks/useAuth';
-import DashBoardNav from '../Shared/DashBoardNav/DashBoardNav';
 import Footer from '../Shared/Footer/Footer';
 import OrderedItem from './OrderedItem/OrderedItem';
 
@@ -36,7 +35,6 @@ const MyOrders = () => {
 
     return (
         <div>
-            <DashBoardNav></DashBoardNav>
             <div className="my-8 text-center mt-5 mb-5">
                 <h3 className="text-3xl">
                     See Your Order List

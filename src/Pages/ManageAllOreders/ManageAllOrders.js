@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import DashBoardNav from '../Shared/DashBoardNav/DashBoardNav';
 import AllOrders from './AllOrders/AllOrders';
 
 const ManageAllOrders = () => {
@@ -49,7 +48,6 @@ const ManageAllOrders = () => {
 
     return (
         <div>
-            <DashBoardNav></DashBoardNav>
             <h1 className="mt-5 mb-5">Manage All Orders</h1>
             <div className="container col-md-12 col-sm-12">
                 <div className="table-responsive">

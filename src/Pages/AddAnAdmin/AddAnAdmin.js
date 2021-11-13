@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import DashBoardNav from '../Shared/DashBoardNav/DashBoardNav';
 
 const AddAnAdmin = () => {
     const [email, setEmail] = useState('');
@@ -31,7 +30,6 @@ const AddAnAdmin = () => {
 
     return (
         <div>
-            <DashBoardNav></DashBoardNav>
             <div className="d-flex flex-column justify-content-center mb-5">
                 <div>
                     <h1 className="text-center mt-5 mb-5">Add An Admin</h1>
