@@ -1,9 +1,10 @@
 import React, { useRef, useState } from 'react';
+import useAuth from '../../Hooks/useAuth';
 
 const UserReview = () => {
 
     const [success, setSuccess] = useState(false);
-
+    const { user } = useAuth();
     const nameRef = useRef("");
     const ratingRef = useRef("");
     const opinionRef = useRef("");
@@ -62,6 +63,7 @@ const UserReview = () => {
                                         type="text"
                                         className="form-control"
                                         ref={nameRef}
+                                        value={user?.displayName}
                                         placeholder="Enter Your Name"
                                         required />
                                 </div>

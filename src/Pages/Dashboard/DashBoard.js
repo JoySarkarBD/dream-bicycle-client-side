@@ -24,6 +24,7 @@ const DashBoard = () => {
                     <Navbar.Toggle aria-controls="responsive-navbar-nav " />
                     <Navbar.Collapse id="responsive-navbar-nav">
                         <Nav className="ms-auto d-flex justify-content-center align-items-center">
+                            <Nav.Link as={NavLink} to="/">Home</Nav.Link>
                             <Nav.Link as={NavLink} to={`${url}`}>Dashboard</Nav.Link>
                             {!admin && <>
                                 <Nav.Link as={NavLink} to={`${url}/myOrders`}>My Orders</Nav.Link>

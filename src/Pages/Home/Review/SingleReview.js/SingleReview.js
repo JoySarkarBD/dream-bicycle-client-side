@@ -8,7 +8,7 @@ const SingleReview = (props) => {
     return (
         <div>
             <div className="card rounded-3 border">
-                <img src={img} className="card-img-top img-size w-25 mx-auto mt-3 rounded-3 border" alt="..." />
+                <img src={img} className="card-img-top img-size w-50 mx-auto mt-3 rounded-circle border" alt="..." />
                 <div className="card-body">
                     <h5 className="card-title mt-3 mb-3">{name}</h5>
                     <div className="d-flex justify-content-between">

@@ -71,13 +71,13 @@ const Login = () => {
                         </form>
                         <>
                             {
-                                user?.email && <div className="alert alert-success mt-3 w-75" role="alert">
-                                    Login successfully!
+                                isLoading && <div className="spinner-border text-danger" role="status">
+                                    <span className="sr-only"></span>
                                 </div>
                             }
                             {
-                                isLoading && <div className="spinner-border text-danger" role="status">
-                                    <span className="sr-only"></span>
+                                user?.email && <div className="alert alert-success mt-3 w-75" role="alert">
+                                    Login successfully!
                                 </div>
                             }
                             {
