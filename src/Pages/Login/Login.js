@@ -33,7 +33,7 @@ const Login = () => {
             <div className="container mt-5 mb-5">
                 <div className="row d-flex justify-content-center align-items-center">
                     <div className="col-md-6 col-sm-12 text-start">
-                        {!isLoading ?
+                        {isLoading ?
                             <div className="spinner-border text-danger" role="status">
                                 <span className="sr-only"></span>
                             </div>
