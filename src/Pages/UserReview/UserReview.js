@@ -1,6 +1,8 @@
-import React, { useRef } from 'react';
+import React, { useRef, useState } from 'react';
 
 const UserReview = () => {
+
+    const [success, setSuccess] = useState(false);
 
     const nameRef = useRef("");
     const ratingRef = useRef("");
@@ -35,6 +37,7 @@ const UserReview = () => {
             .then(data => {
                 if (data.insertedId) {
                     alert("Review Submitted successfully....!");
+                    setSuccess(true);
                     e.target.reset()
                 }
             })
@@ -95,6 +98,10 @@ const UserReview = () => {
                                 <input type="submit" className={"btn btn-success"} />
                             </form>
                         </div>
+                        {success &&
+                            <div className="alert alert-success" role="alert">
+                                Review Submitted!
+                            </div>}
                     </div>
                 </div>
             </div>

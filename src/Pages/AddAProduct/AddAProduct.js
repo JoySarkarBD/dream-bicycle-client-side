@@ -4,6 +4,7 @@ import React, { useState } from 'react';
 const AddAProduct = () => {
 
     const [addProductInfo, setNewProductInfo] = useState({});
+    const [success, setSuccess] = useState(false);
 
     const handleOnBlur = (e) => {
         const field = e.target.name;
@@ -29,6 +30,7 @@ const AddAProduct = () => {
             .then(data => {
                 if (data.insertedId) {
                     alert("Product Added successfully....!");
+                    setSuccess(true);
                     e.target.reset()
                 }
             });
@@ -96,6 +98,10 @@ const AddAProduct = () => {
 
                 <input type="submit" className={"btn btn-success"} />
             </form>
+
+            {success && <div className="alert alert-success" role="alert">
+                Product Added!
+            </div>}
         </div>
     );
 }

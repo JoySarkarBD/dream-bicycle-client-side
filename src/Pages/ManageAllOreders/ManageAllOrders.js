@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from 'react';
+import useAuth from '../../Hooks/useAuth';
 import AllOrders from './AllOrders/AllOrders';
 
 const ManageAllOrders = () => {
 
     const [allOrders, setAllOrders] = useState([]);
 
-    
+    const { isLoading } = useAuth();
 
     useEffect(() => {
         fetch("https://pacific-tundra-63617.herokuapp.com/manageOrders")
@@ -50,36 +51,44 @@ const ManageAllOrders = () => {
 
     return (
 
-        <div>
-            <h1 className="mt-5 mb-5">Manage All Orders</h1>
-            <div className="container col-md-12 col-sm-12">
-                <div className="table-responsive">
-                    <table className="table">
-                        <thead>
-                            <tr>
-                                <th scope="col">S/N</th>
-                                <th scope="col">Name</th>
-                                <th scope="col">Product</th>
-                                <th scope="col">Email</th>
-                                <th scope="col">Status</th>
-                                <th scope="col">Action</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            {allOrders.map((orders, index) => <AllOrders
-                                key={orders._id}
-                                orders={orders}
-                                serial={index + 1}
-                                rejectOrder={rejectOrder}
-                                handleUpdateStatus={handleUpdateStatus}
-                            >
-                            </AllOrders>
-                            )}
-                        </tbody>
-                    </table>
+        <>
+            {isLoading ?
+                <div className="spinner-border text-danger" role="status">
+                    <span className="sr-only"></span>
                 </div>
-            </div>
-        </div>
+                :
+                <>
+
+                    <h1 className="mt-5 mb-5">Manage All Orders</h1>
+                    <div className="container col-md-12 col-sm-12">
+                        <div className="table-responsive">
+                            <table className="table">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">S/N</th>
+                                        <th scope="col">Name</th>
+                                        <th scope="col">Product</th>
+                                        <th scope="col">Email</th>
+                                        <th scope="col">Status</th>
+                                        <th scope="col">Action</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {allOrders.map((orders, index) => <AllOrders
+                                        key={orders._id}
+                                        orders={orders}
+                                        serial={index + 1}
+                                        rejectOrder={rejectOrder}
+                                        handleUpdateStatus={handleUpdateStatus}
+                                    >
+                                    </AllOrders>
+                                    )}
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </>}
+        </>
 
     );
 };

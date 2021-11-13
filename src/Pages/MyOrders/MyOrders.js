@@ -5,7 +5,7 @@ import OrderedItem from './OrderedItem/OrderedItem';
 
 const MyOrders = () => {
     const [myOrders, setMyOrders] = useState([]);
-    const { user } = useAuth();
+    const { user, isLoading } = useAuth();
 
     useEffect(() => {
         fetch(`https://pacific-tundra-63617.herokuapp.com/myOrders/${user?.email}`)
@@ -13,7 +13,7 @@ const MyOrders = () => {
             .then(data => {
                 setMyOrders(data)
             })
-    }, [myOrders,user?.email])
+    }, [myOrders, user?.email])
 
     const deleteOrder = (id) => {
         let warning = window.confirm("Are sure wanna delete this product?");
@@ -34,37 +34,43 @@ const MyOrders = () => {
 
 
     return (
-        <div>
+        <>
             <div className="my-8 text-center mt-5 mb-5">
                 <h3 className="text-3xl">
                     See Your Order List
                 </h3>
             </div>
-            <div className="table-responsive">
-                <table className="table mb-5 container">
-                    <thead>
-                        <tr>
-                            <th scope="col">S/N</th>
-                            <th scope="col">Product</th>
-                            <th scope="col">Email</th>
-                            <th scope="col">Shipping Address</th>
-                            <th scope="col">Order Status</th>
-                            <th scope="col">Action</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {myOrders.map((orders, index) => <OrderedItem
-                            key={orders._id}
-                            orders={orders}
-                            serial={index + 1}
-                            deleteOrder={deleteOrder}
-                        ></OrderedItem>)}
-                    </tbody>
-                </table>
-            </div>
-
+            {isLoading ?
+                <div className="spinner-border text-danger" role="status">
+                    <span className="sr-only"></span>
+                </div>
+                :
+                <>
+                    <div className="table-responsive">
+                        <table className="table mb-5 container">
+                            <thead>
+                                <tr>
+                                    <th scope="col">S/N</th>
+                                    <th scope="col">Product</th>
+                                    <th scope="col">Email</th>
+                                    <th scope="col">Shipping Address</th>
+                                    <th scope="col">Order Status</th>
+                                    <th scope="col">Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {myOrders.map((orders, index) => <OrderedItem
+                                    key={orders._id}
+                                    orders={orders}
+                                    serial={index + 1}
+                                    deleteOrder={deleteOrder}
+                                ></OrderedItem>)}
+                            </tbody>
+                        </table>
+                    </div>
+                </>}
             <Footer></Footer>
-        </div>
+        </>
     );
 };
 
