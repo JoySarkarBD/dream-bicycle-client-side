@@ -80,6 +80,7 @@ const Register = () => {
                             <Link to="/login"> <a href="/"> Already have an account Login? Then Login.</a></Link>
                             <button type="submit" className="btn btn-primary w-75 mt-3">Register</button>
                         </form>}
+
                         {
                             isLoading && <div className="spinner-border text-danger" role="status">
                                 <span className="sr-only"></span>
@@ -95,6 +96,7 @@ const Register = () => {
                                 {authError}
                             </div>
                         }
+
                     </div>
                     <div className="col-md-6 col-sm-12">
                         <img src={img} className="w-75" alt="" />

@@ -33,58 +33,63 @@ const Login = () => {
             <div className="container mt-5 mb-5">
                 <div className="row d-flex justify-content-center align-items-center">
                     <div className="col-md-6 col-sm-12 text-start">
-                        <form onSubmit={handleLoginSubmit}>
-
-                            <h1>Please Login</h1>
-
-                            <div className="mb-3 ">
-                                <label for="exampleInputEmail1" className="form-label">Email address</label>
-                                <input
-                                    type="email"
-                                    className="form-control w-75"
-                                    id="exampleInputEmail1"
-                                    name="email"
-                                    onBlur={handleOnBlur}
-                                    aria-describedby="emailHelp" />
+                        {!isLoading ?
+                            <div className="spinner-border text-danger" role="status">
+                                <span className="sr-only"></span>
                             </div>
+                            :
+                            <form onSubmit={handleLoginSubmit}>
 
-                            <div className="mb-3">
-                                <label for="exampleInputPassword1" className="form-label">Password</label>
-                                <input
-                                    type="password"
-                                    className="form-control w-75"
-                                    name="password"
-                                    onBlur={handleOnBlur}
-                                    id="exampleInputPassword1" />
-                            </div>
+                                <h1>Please Login</h1>
 
-                            <Link to="/register"> <a href="/"> Don't have an account? Create An Account....!</a></Link>
-                            <button type="submit" className="btn btn-primary w-75 mt-3 fw-bold">Login</button>
-
-                            <hr className="my-4 w-75" />
-                            {
-                                isLoading && <div className="spinner-border text-danger" role="status">
-                                    <span className="sr-only"></span>
+                                <div className="mb-3 ">
+                                    <label for="exampleInputEmail1" className="form-label">Email address</label>
+                                    <input
+                                        type="email"
+                                        className="form-control w-75"
+                                        id="exampleInputEmail1"
+                                        name="email"
+                                        onBlur={handleOnBlur}
+                                        aria-describedby="emailHelp" />
                                 </div>
-                            }
-                            {
-                                user?.email && <div className="alert alert-success mt-3 w-75" role="alert">
-                                    Login successfully!
-                                </div>
-                            }
-                            {
-                                authError &&
-                                <div className="alert alert-danger mt-3 w-75" role="alert">
-                                    {authError}
-                                </div>
-                            }
 
-                            <div className="d-grid mb-2">
-                                <button onClick={handleGoogleSign} className="btn btn-google bg-success text-uppercase text-white w-75 fw-bold" type="submit" >
-                                    <i className=" me-2"></i> Sign in with Google
-                                </button>
-                            </div>
-                        </form>
+                                <div className="mb-3">
+                                    <label for="exampleInputPassword1" className="form-label">Password</label>
+                                    <input
+                                        type="password"
+                                        className="form-control w-75"
+                                        name="password"
+                                        onBlur={handleOnBlur}
+                                        id="exampleInputPassword1" />
+                                </div>
+
+                                <Link to="/register"> <a href="/"> Don't have an account? Create An Account....!</a></Link>
+                                <button type="submit" className="btn btn-primary w-75 mt-3 fw-bold">Login</button>
+
+                                <hr className="my-4 w-75" />
+                                {
+                                    isLoading && <div className="spinner-border text-danger" role="status">
+                                        <span className="sr-only"></span>
+                                    </div>
+                                }
+                                {
+                                    user?.email && <div className="alert alert-success mt-3 w-75" role="alert">
+                                        Login successfully!
+                                    </div>
+                                }
+                                {
+                                    authError &&
+                                    <div className="alert alert-danger mt-3 w-75" role="alert">
+                                        {authError}
+                                    </div>
+                                }
+
+                                <div className="d-grid mb-2">
+                                    <button onClick={handleGoogleSign} className="btn btn-google bg-success text-uppercase text-white w-75 fw-bold" type="submit" >
+                                        <i className=" me-2"></i> Sign in with Google
+                                    </button>
+                                </div>
+                            </form>}
 
                     </div>
                     <div className="col-md-6 col-sm-12">
