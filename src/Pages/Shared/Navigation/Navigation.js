@@ -17,7 +17,7 @@ const Navigation = () => {
                         <Nav.Link as={NavLink} to="/explore">Explore</Nav.Link>
                         {user?.email && <Nav.Link as={NavLink} to="/dashBoard">Dashboard</Nav.Link>}
                         {user?.email && <Navbar.Text>
-                            Signed in as: <a href="/" aria-disabled>{user?.displayName}</a>
+                            User: <a href="/" aria-disabled>{user?.displayName}</a>
                         </Navbar.Text>}
                         {user?.email ? <Nav.Link as={NavLink} onClick={logout} to="/" ><Button variant="secondary" className="btn btn-secondary">Logout</Button></Nav.Link>
                             :

@@ -47,6 +47,7 @@ const ManageAllOrders = () => {
     }
 
     return (
+
         <div>
             <h1 className="mt-5 mb-5">Manage All Orders</h1>
             <div className="container col-md-12 col-sm-12">
@@ -72,13 +73,13 @@ const ManageAllOrders = () => {
                             >
                             </AllOrders>
                             )}
-                            {/* */}
                         </tbody>
                     </table>
                 </div>
 
             </div>
         </div>
+
     );
 };
 

@@ -12,19 +12,9 @@ import BookOrder from './Pages/BookOrder/BookOrder';
 import AuthProvider from './Context/AuthProvider/AuthProvider';
 import PrivateRoute from './Pages/Login/PrivateRoute/PrivateRoute';
 import DashBoard from './Pages/Dashboard/DashBoard';
-// import AddAProduct from './Pages/AddAProduct/AddAProduct';
-// import MyOrders from './Pages/MyOrders/MyOrders';
-// import ManageAllOrders from './Pages/ManageAllOreders/ManageAllOrders';
-// import UserReview from './Pages/UserReview/UserReview';
-// import AddAnAdmin from './Pages/AddAnAdmin/AddAnAdmin';
-// import ManageProducts from './Pages/ManageProducts/ManageProducts';
-// import Pay from './Pages/Pay/Pay';
 import Error from './Pages/Error/Error';
-// import AdminRoute from './Pages/Login/AdminRoute/AdminRoute';
 
 function App() {
-
-
   return (
     <div className="App">
       <AuthProvider>
@@ -47,11 +37,9 @@ function App() {
               <BookOrder></BookOrder>
             </PrivateRoute>
 
-
             <PrivateRoute path="/dashBoard">
               <DashBoard></DashBoard>
             </PrivateRoute>
-
 
             <Route exact path="/login">
               <Login />
