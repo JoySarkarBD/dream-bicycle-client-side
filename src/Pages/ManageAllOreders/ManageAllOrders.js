@@ -5,6 +5,8 @@ const ManageAllOrders = () => {
 
     const [allOrders, setAllOrders] = useState([]);
 
+    
+
     useEffect(() => {
         fetch("https://pacific-tundra-63617.herokuapp.com/manageOrders")
             .then(res => res.json())
@@ -76,7 +78,6 @@ const ManageAllOrders = () => {
                         </tbody>
                     </table>
                 </div>
-
             </div>
         </div>
 

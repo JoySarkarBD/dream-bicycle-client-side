@@ -25,9 +25,11 @@ const DashBoard = () => {
                     <Navbar.Collapse id="responsive-navbar-nav">
                         <Nav className="ms-auto d-flex justify-content-center align-items-center">
                             <Nav.Link as={NavLink} to={`${url}`}>Dashboard</Nav.Link>
-                            {!admin && <Nav.Link as={NavLink} to={`${url}/myOrders`}>My Orders</Nav.Link>}
-                            {!admin && <Nav.Link as={NavLink} to={`${url}/userReview`}>Review</Nav.Link>}
-                            {!admin && <Nav.Link as={NavLink} to={`${url}/pay`}>Pay</Nav.Link>}
+                            {!admin && <>
+                                <Nav.Link as={NavLink} to={`${url}/myOrders`}>My Orders</Nav.Link>
+                                <Nav.Link as={NavLink} to={`${url}/userReview`}>Review</Nav.Link>
+                                <Nav.Link as={NavLink} to={`${url}/pay`}>Pay</Nav.Link>
+                            </>}
                             {admin &&
                                 <>
                                     <Nav.Link as={NavLink} to={`${url}/manageAllOrders`}>Manage All Orders</Nav.Link>
@@ -35,7 +37,6 @@ const DashBoard = () => {
                                     <Nav.Link as={NavLink} to={`${url}/addAnAdmin`}>Add An Admin</Nav.Link>
                                     <Nav.Link as={NavLink} to={`${url}/addAProduct`}>Add A Product</Nav.Link>
                                 </>}
-
                             <Navbar.Text>
                                 User: <a href="/" aria-disabled>{user?.displayName}</a>
                             </Navbar.Text>
@@ -50,33 +51,38 @@ const DashBoard = () => {
                     <DashBoardHome></DashBoardHome>
                 </Route>
 
-                <AdminRoute exact path={`${path}/addAProduct`}>
-                    <AddAProduct></AddAProduct>
-                </AdminRoute>
+                {admin &&
+                    <>
+                        <AdminRoute exact path={`${path}/addAProduct`}>
+                            <AddAProduct></AddAProduct>
+                        </AdminRoute>
 
-                <AdminRoute exact path={`${path}/manageAllOrders`}>
-                    <ManageAllOrders></ManageAllOrders>
-                </AdminRoute>
+                        <AdminRoute exact path={`${path}/manageAllOrders`}>
+                            <ManageAllOrders></ManageAllOrders>
+                        </AdminRoute>
 
-                <PrivateRoute exact path={`${path}/myOrders`}>
-                    <MyOrders></MyOrders>
-                </PrivateRoute>
+                        <AdminRoute exact path={`${path}/addAnAdmin`}>
+                            <AddAnAdmin></AddAnAdmin>
+                        </AdminRoute>
 
-                <PrivateRoute exact path={`${path}/userReview`}>
-                    <UserReview></UserReview>
-                </PrivateRoute>
+                        <AdminRoute exact path={`${path}/manageProducts`}>
+                            <ManageProducts></ManageProducts>
+                        </AdminRoute>
+                    </>}
+                {!admin &&
+                    <>
+                        <PrivateRoute exact path={`${path}/myOrders`}>
+                            <MyOrders></MyOrders>
+                        </PrivateRoute>
 
-                <AdminRoute exact path={`${path}/addAnAdmin`}>
-                    <AddAnAdmin></AddAnAdmin>
-                </AdminRoute>
+                        <PrivateRoute exact path={`${path}/userReview`}>
+                            <UserReview></UserReview>
+                        </PrivateRoute>
 
-                <AdminRoute exact path={`${path}/manageProducts`}>
-                    <ManageProducts></ManageProducts>
-                </AdminRoute>
-
-                <PrivateRoute exact path={`${path}/pay`}>
-                    <Pay></Pay>
-                </PrivateRoute>
+                        <PrivateRoute exact path={`${path}/pay`}>
+                            <Pay></Pay>
+                        </PrivateRoute>
+                    </>}
             </Switch>
         </div >
     );
