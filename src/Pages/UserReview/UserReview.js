@@ -52,7 +52,7 @@ const UserReview = () => {
                     <h1 className="text-center mt-5 mb-5">Give A Review</h1>
                 </div>
                 <div className="row container mx-auto">
-                    <div className="col-md-6 col-sm-12 mx-auto">
+                    <div className="col-md-6 col-sm-12 mx-auto w-100">
                         <div className="mx-auto mb-5">
 
                             <form onSubmit={handleSubmitReview} className="d-flex flex-column container text-start">

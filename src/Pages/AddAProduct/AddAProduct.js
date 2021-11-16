@@ -40,8 +40,8 @@ const AddAProduct = () => {
 
     return (
         <div>
-            <form onSubmit={handleAddProductSubmit} className="d-flex flex-column container text-start col-md-6 col-sm-12 mt-5 mb-5">
-                <h1 className="text-center mb-4">Add A New Product</h1>
+            <form onSubmit={handleAddProductSubmit} className="d-flex flex-column container text-start col-md-6 col-sm-12 mt-5 mb-5 w-100">
+                <h1 className="text-center mb-4">Add A Product</h1>
                 <div className="mb-3 ">
                     <label className="form-label">Enter Product Name</label>
                     <input
